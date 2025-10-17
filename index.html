@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JU STEM Academy - Expert STEM Tutoring</title>
+    <link rel="stylesheet" href="https://use.typekit.net/wvz7svc.css" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/public/styles/site.css" />
+  </head>
+  <body>
+    <!-- Promotional Modal -->
+    <div id="promoModal">
+      <div class="promo-content">
+        <span class="close-promo" onclick="closePromoModal()">&times;</span>
+        <i class="fas fa-gift promo-icon"></i>
+        <h2 class="promo-title">Refer a Friend and Save!</h2>
+        <p class="promo-message">
+          Claim a permanent $10 off your hourly rate when a student you
+          recommend purchases any package!
+        </p>
+        <a href="services.html" class="promo-cta">View Our Packages</a>
+        <div class="promo-footer">
+          *Discount applies to all future sessions after referral purchase
+        </div>
+        <label class="dont-show-again">
+          <input type="checkbox" id="dontShowAgain" /> Don't show this again
+        </label>
+      </div>
+    </div>
+
+    <!-- Updated Header with New Design -->
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Logo -->
+        <div class="logo-wrapper">
+          <a href="index.html">
+            <img src="/public/images/logo.png" alt="JU STEM Academy Logo" />
+          </a>
+
+          <a href="index.html">
+            <span class="logo-text">JU STEM ACADEMY</span>
+          </a>
+        </div>
+
+        <!-- Navigation and CTA Button -->
+        <div class="nav-cta-wrapper">
+          <nav class="main-navigation">
+            <ul>
+              <li><a href="index.html" class="active">HOME</a></li>
+              <li><a href="services.html">SERVICES</a></li>
+              <li><a href="team.html">OUR TEAM</a></li>
+              <li><a href="testimonials.html">TESTIMONIALS</a></li>
+            </ul>
+          </nav>
+
+          <!-- CTA Button -->
+          <div class="cta-button-container">
+            <a
+              href="https://docs.google.com/forms/d/151NRfLN_tt53kv6yPn0TiPJGhx0g_DkeNJvFyLq_6SI/viewform"
+              class="header-cta-button"
+              >SCHEDULE A CONSULTATION</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Original Content Below -->
+    <!-- Mission Statement -->
+    <section class="mission-section">
+      <img
+        src="/public/images/stem-background.png"
+        alt="Background"
+        class="background-image"
+      />
+      <div class="mission-overlay">
+        <div class="container">
+          <h2 class="mission-title">
+            Making STEM Accessible, One Student at a Time
+          </h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section>
+      <div class="container">
+        <h2>Who We Are</h2>
+        <p class="about-content">
+          JU STEM Academy is a premier tutoring service founded by Cornell
+          University graduates with high honors and top test scores. We provide
+          expert, personalized instruction across STEM subjects and standardized
+          test preparation, helping students master challenging coursework and
+          achieve their academic goals. Our mission is simple: making STEM
+          accessible, one student at a time.
+        </p>
+      </div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section>
+      <div class="container">
+        <h2>What We Offer</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Mentorship</h3>
+            <p>
+              Build meaningful relationships with Cornell University graduates
+              who provide guidance, support, and inspiration to help you reach
+              your full academic potential.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Tutoring</h3>
+            <p>
+              Learn from tutors with proven excellence. Our Cornell graduates
+              earned high honors and achieved top test scores, including a 510+
+              MCAT, demonstrating true mastery of their subjects.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h3>Empathy</h3>
+            <p>
+              Work with tutors who remember the late-night study sessions, the
+              exam anxiety, and the moment concepts finally click. We've been
+              where you are, and we're committed to helping you succeed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutors Section -->
+    <section>
+      <div class="container">
+        <h2>Meet Your Expert Tutors</h2>
+        <div class="tutors-grid">
+          <div class="tutor-card" onclick="openTutorModal('joseph')">
+            <img
+              src="/public/images/joseph.jpg"
+              alt="Joseph Agyemang"
+              class="tutor-image"
+            />
+            <h3 class="tutor-name">Joseph Agyemang</h3>
+            <p class="tutor-title">Co-Founder & Lead Consultant</p>
+            <p class="tutor-degree">Cornell University<br />Magna Cum Laude</p>
+          </div>
+          <div class="tutor-card" onclick="openTutorModal('ukana')">
+            <img
+              src="/public/images/ukana.jpg"
+              alt="Ukana Bassey"
+              class="tutor-image"
+            />
+            <h3 class="tutor-name">Ukana Bassey</h3>
+            <p class="tutor-title">Co-Founder & Lead Tutor</p>
+            <p class="tutor-degree">Cornell University<br />510+ MCAT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutor Modals -->
+    <div id="josephModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeTutorModal('joseph')">&times;</span>
+        <img
+          src="/public/images/joseph.jpg"
+          alt="Joseph Agyemang"
+          class="modal-image"
+        />
+        <h2>Joseph Agyemang</h2>
+        <h3>Co-Founder & Lead Consultant</h3>
+        <p class="modal-bio">
+          Hi! I'm Joseph, Co-Founder and Lead Consultant of JU STEM Academy. I
+          graduated Magna cum Laude from Cornell University with a degree in
+          Biology and Society, and I've spent the past 4+ years discovering my
+          passion for education. What I love most about this work is simple:
+          every tutoring session is a chance to transform how a student sees
+          learning and help them believe in their own abilities. Outside the
+          classroom, I'm a die-hard Arsenal fan. I recently made the trip to the
+          UK to watch them play live, and it was absolutely electric! I believe
+          the beautiful game and STEM have a lot in common: both require
+          strategy, creativity, and persistence.
+        </p>
+      </div>
+    </div>
+
+    <div id="ukanaModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeTutorModal('ukana')">&times;</span>
+        <img
+          src="/public/images/ukana.jpg"
+          alt="Ukana Bassey"
+          class="modal-image"
+        />
+        <h2>Ukana Bassey</h2>
+        <h3>Co-Founder & Lead Tutor</h3>
+        <p class="modal-bio">
+          Hi! I'm Ukana Bassey, Co-Founder and Lead Academic Tutor of JU STEM
+          Academy. I graduated from Cornell University studying Biology and
+          Society, and I've dedicated the past 4+ years to making STEM education
+          engaging and accessible. My favorite part of this work is creating
+          those breakthrough moments, when a student goes from frustrated to
+          fascinated, when they realize they're capable of so much more than
+          they thought. Outside of academics I enjoy fashion, photography, and
+          endurance training as valuable pastimes!
+        </p>
+      </div>
+    </div>
+
+    <!-- Subjects Section -->
+    <section>
+      <div class="container">
+        <h2>Subjects We Teach</h2>
+        <div class="subjects-box">
+          <p class="subjects-title">PROVIDING EXPERT INSTRUCTION IN</p>
+          <div class="subjects-grid">
+            <ul class="subject-list">
+              <li>General Chemistry</li>
+              <li>Organic Chemistry</li>
+              <li>Biology</li>
+              <li>Biochemistry</li>
+              <li>Physics</li>
+            </ul>
+            <ul class="subject-list">
+              <li>Algebra</li>
+              <li>AP Exams</li>
+              <li>SAT / ACT</li>
+              <li>MCAT</li>
+              <li>And More!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section>
+      <div class="container">
+        <h2>What Our Students Say</h2>
+        <div class="testimonials-carousel">
+          <button class="carousel-button prev" onclick="moveCarousel(-1)">
+            ❮
+          </button>
+
+          <div class="carousel-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card active">
+              <div class="testimonial-header">
+                <div class="testimonial-subject">
+                  Biochemistry<br />Organic Chemistry
+                </div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <p class="testimonial-text">
+                Ukana took the time to prepare assignments for me to confirm my
+                understanding of the material, especially the material I found
+                the most challenging. With his help,
+                <span class="highlight"
+                  >I found myself achieving grades I did not know I was capable
+                  of and improving extensively across all of my courses</span
+                >
+                when implementing his study methods.
+              </p>
+              <p class="testimonial-author">A.M.</p>
+              <p class="testimonial-role">Cornell Student</p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-subject">
+                  Cell Biology<br />Organic Chemistry
+                </div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <p class="testimonial-text">
+                Joseph really helped me strengthen my problem solving skills for
+                classes like biology and organic chemistry. He challenged me to
+                really think about why an answer was correct and gave insightful
+                tips on what professors typically test students on. He is a very
+                knowledgeable and receptive tutor, and
+                <span class="highlight"
+                  >with his help I was able to get As in biology and organic
+                  chemistry.</span
+                >
+              </p>
+              <p class="testimonial-author">A.M.</p>
+              <p class="testimonial-role">Cornell Student</p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-subject">General Chemistry</div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <p class="testimonial-text">
+                Ukana was my tutor for 1st semester General Chemistry through
+                the on-ramp program. Whenever he saw that I didn't understand,
+                <span class="highlight"
+                  >he would go through the material again slowly and create
+                  useful analogies which helped deepen my understanding.</span
+                >
+                He was also very approachable and made asking questions easy
+                which helped a lot as I was a freshman.
+              </p>
+              <p class="testimonial-author">G.D.</p>
+              <p class="testimonial-role">Cornell Student</p>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card">
+              <div class="testimonial-header">
+                <div class="testimonial-subject">Introductory Biology</div>
+                <div class="stars">★★★★★</div>
+              </div>
+              <p class="testimonial-text">
+                Working with Ukana really helped me turn things around in my
+                Biology course. Before I was struggling and feeling overwhelmed,
+                but
+                <span class="highlight"
+                  >his consistent support helped me gain confidence and
+                  eventually finish the class with a high grade.</span
+                >
+                His annotated slides helped break down complex topics in a more
+                digestible way, and the Anki slide deck he guided me in building
+                became an incredibly useful study tool.
+              </p>
+              <p class="testimonial-author">BIOG1440 Student</p>
+              <p class="testimonial-role">Cornell Student</p>
+            </div>
+          </div>
+
+          <button class="carousel-button next" onclick="moveCarousel(1)">
+            ❯
+          </button>
+        </div>
+
+        <!-- Carousel Dots -->
+        <div class="carousel-dots">
+          <span class="dot active" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+          <span class="dot" onclick="goToSlide(2)"></span>
+          <span class="dot" onclick="goToSlide(3)"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Excel in STEM?</h2>
+        <p class="cta-tagline">
+          Making STEM Accessible, One Student at a Time<br />Mastery Across
+          STEM, Backed by A's and 510+ MCAT
+        </p>
+        <div class="cta-container">
+          <a
+            href="https://docs.google.com/forms/d/151NRfLN_tt53kv6yPn0TiPJGhx0g_DkeNJvFyLq_6SI/viewform"
+            class="cta-button"
+            >Schedule Your Free Consultation</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with Social Media Icons -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">JU STEM ACADEMY</div>
+        <div class="social-icons">
+          <a
+            href="https://justemacademy.com"
+            class="social-icon"
+            title="Website"
+          >
+            <i class="fas fa-globe"></i>
+          </a>
+          <a
+            href="mailto:justemacademy@gmail.com"
+            class="social-icon"
+            title="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://instagram.com/justemacademy"
+            class="social-icon"
+            title="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.facebook.com/justemacademy"
+            class="social-icon"
+            title="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/@justemacademy_"
+            class="social-icon"
+            title="TikTok"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          © 2025 JU STEM Academy, Inc. Making STEM Accessible.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".testimonial-card");
+      const dots = document.querySelectorAll(".dot");
+
+      function showSlide(n) {
+        if (n >= slides.length) {
+          currentSlide = 0;
+        }
+        if (n < 0) {
+          currentSlide = slides.length - 1;
+        }
+
+        slides.forEach((slide) => slide.classList.remove("active"));
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        slides[currentSlide].classList.add("active");
+        dots[currentSlide].classList.add("active");
+      }
+
+      function moveCarousel(direction) {
+        currentSlide += direction;
+        showSlide(currentSlide);
+      }
+
+      function goToSlide(n) {
+        currentSlide = n;
+        showSlide(currentSlide);
+      }
+
+      // Auto-advance carousel every 5 seconds
+      setInterval(() => {
+        moveCarousel(1);
+      }, 5000);
+
+      // Modal functions
+      function openTutorModal(tutor) {
+        document.getElementById(tutor + "Modal").style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeTutorModal(tutor) {
+        document.getElementById(tutor + "Modal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // Promo Modal Functions
+      function openPromoModal() {
+        const promoModal = document.getElementById("promoModal");
+        promoModal.style.display = "block";
+        // Small delay to allow the display change to register before adding the visible class
+        setTimeout(() => {
+          promoModal.classList.add("visible");
+        }, 10);
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePromoModal() {
+        const promoModal = document.getElementById("promoModal");
+        const dontShowAgain = document.getElementById("dontShowAgain");
+
+        promoModal.classList.remove("visible");
+
+        // Wait for animation to finish before hiding
+        setTimeout(() => {
+          promoModal.style.display = "none";
+          document.body.style.overflow = "auto";
+        }, 300);
+
+        // If user checked "don't show again", save to localStorage
+        if (dontShowAgain.checked) {
+          localStorage.setItem("hidePromoModal", "true");
+        }
+      }
+
+      // Check if we should show the promo modal
+      window.addEventListener("load", function () {
+        // Don't show if user has opted out
+        if (localStorage.getItem("hidePromoModal") !== "true") {
+          // Show modal after 2 seconds delay
+          setTimeout(openPromoModal, 2000);
+        }
+      });
+
+      // Close modal when clicking outside
+      window.onclick = function (event) {
+        // For tutor modals
+        if (event.target.classList.contains("modal")) {
+          event.target.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+
+        // For promo modal
+        if (event.target.id === "promoModal") {
+          closePromoModal();
+        }
+      };
+    </script>
+  </body>
+</html>
