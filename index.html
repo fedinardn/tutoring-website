@@ -39,12 +39,19 @@
         <!-- Logo -->
         <div class="logo-wrapper">
           <a href="index.html">
-            <img src="/public/images/logo.png" alt="JU STEM Academy Logo" />
+            <img src="public/images/logo.png" alt="JU STEM Academy Logo" />
           </a>
 
           <a href="index.html">
             <span class="logo-text">JU STEM ACADEMY</span>
           </a>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 
         <!-- Navigation and CTA Button -->
@@ -63,6 +70,8 @@
             <a
               href="https://docs.google.com/forms/d/151NRfLN_tt53kv6yPn0TiPJGhx0g_DkeNJvFyLq_6SI/viewform"
               class="header-cta-button"
+              target="_blank"
+              rel="noopener noreferrer"
               >SCHEDULE A CONSULTATION</a
             >
           </div>
@@ -287,10 +296,10 @@
                 knowledgeable and receptive tutor, and
                 <span class="highlight"
                   >with his help I was able to get As in biology and organic
-                  chemistry.</span
-                >
+                  chemistry.
+                </span>
               </p>
-              <p class="testimonial-author">A.M.</p>
+              <p class="testimonial-author">M.L.G</p>
               <p class="testimonial-role">Cornell Student</p>
             </div>
 
@@ -301,38 +310,38 @@
                 <div class="stars">★★★★★</div>
               </div>
               <p class="testimonial-text">
-                Ukana was my tutor for 1st semester General Chemistry through
-                the on-ramp program. Whenever he saw that I didn't understand,
+                Joseph supported my daughter's academic growth through patient,
+                step-by-step instruction and consistent practice.
                 <span class="highlight"
-                  >he would go through the material again slowly and create
-                  useful analogies which helped deepen my understanding.</span
+                  >He effectively used modern learning platforms and adapted his
+                  teaching to her needs.</span
                 >
-                He was also very approachable and made asking questions easy
-                which helped a lot as I was a freshman.
+                I have no doubt that the foundation Joseph built can be
+                attributed to my daughter’s success in her IB curriculum.
               </p>
-              <p class="testimonial-author">G.D.</p>
-              <p class="testimonial-role">Cornell Student</p>
+              <p class="testimonial-author">Laura Syer</p>
+              <p class="testimonial-role">VP of Budget and Planning, NYU</p>
             </div>
 
             <!-- Testimonial 4 -->
             <div class="testimonial-card">
               <div class="testimonial-header">
-                <div class="testimonial-subject">Introductory Biology</div>
+                <div class="testimonial-subject">Biochemistry I</div>
                 <div class="stars">★★★★★</div>
               </div>
               <p class="testimonial-text">
-                Working with Ukana really helped me turn things around in my
-                Biology course. Before I was struggling and feeling overwhelmed,
-                but
+                Ukana provided tutoring services for Biochemistry I which I was
+                able to get an A in. He came prepared with material and was able
+                to articulate it in a way that was easy to understand. It is
+                evident that
                 <span class="highlight"
-                  >his consistent support helped me gain confidence and
-                  eventually finish the class with a high grade.</span
-                >
-                His annotated slides helped break down complex topics in a more
-                digestible way, and the Anki slide deck he guided me in building
-                became an incredibly useful study tool.
+                  >Ukana values teaching others and is able to connect with
+                  clients on a level that makes the sessions seamless and
+                  comfortable.
+                </span>
+                I would recommend Ukana to anyone.
               </p>
-              <p class="testimonial-author">BIOG1440 Student</p>
+              <p class="testimonial-author">Zahra</p>
               <p class="testimonial-role">Cornell Student</p>
             </div>
           </div>
@@ -358,12 +367,14 @@
         <h2>Ready to Excel in STEM?</h2>
         <p class="cta-tagline">
           Making STEM Accessible, One Student at a Time<br />Mastery Across
-          STEM, Backed by A's and 510+ MCAT
+          STEM, backed by A's and 510+ MCAT tutors.
         </p>
         <div class="cta-container">
           <a
             href="https://docs.google.com/forms/d/151NRfLN_tt53kv6yPn0TiPJGhx0g_DkeNJvFyLq_6SI/viewform"
             class="cta-button"
+            target="_blank"
+            rel="noopener noreferrer"
             >Schedule Your Free Consultation</a
           >
         </div>
@@ -373,19 +384,21 @@
     <!-- Footer with Social Media Icons -->
     <footer>
       <div class="footer-content">
-        <div class="footer-logo">JU STEM ACADEMY</div>
+        <a href="https://justemacademy.com" class="footer-logo-link">
+          <img
+            src="public/images/logo.png"
+            alt="JU STEM Academy Logo"
+            class="footer-logo-image"
+          />
+          <div class="footer-logo">JU STEM ACADEMY</div>
+        </a>
         <div class="social-icons">
-          <a
-            href="https://justemacademy.com"
-            class="social-icon"
-            title="Website"
-          >
-            <i class="fas fa-globe"></i>
-          </a>
           <a
             href="mailto:justemacademy@gmail.com"
             class="social-icon"
             title="Email"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i class="fas fa-envelope"></i>
           </a>
@@ -393,20 +406,17 @@
             href="https://instagram.com/justemacademy"
             class="social-icon"
             title="Instagram"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.facebook.com/justemacademy"
-            class="social-icon"
-            title="Facebook"
-          >
-            <i class="fab fa-facebook-f"></i>
           </a>
           <a
             href="https://www.tiktok.com/@justemacademy_"
             class="social-icon"
             title="TikTok"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <i class="fab fa-tiktok"></i>
           </a>
@@ -423,6 +433,7 @@
       const dots = document.querySelectorAll(".dot");
 
       function showSlide(n) {
+        // Update current slide index
         if (n >= slides.length) {
           currentSlide = 0;
         }
@@ -430,10 +441,16 @@
           currentSlide = slides.length - 1;
         }
 
-        slides.forEach((slide) => slide.classList.remove("active"));
+        // Remove active class from all slides and dots
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+          slide.style.display = "none"; // Ensure hidden slides are not in layout
+        });
         dots.forEach((dot) => dot.classList.remove("active"));
 
+        // Activate current slide and dot
         slides[currentSlide].classList.add("active");
+        slides[currentSlide].style.display = "block"; // Show current slide
         dots[currentSlide].classList.add("active");
       }
 
@@ -447,10 +464,15 @@
         showSlide(currentSlide);
       }
 
-      // Auto-advance carousel every 5 seconds
+      // Auto-advance carousel every 15 seconds
       setInterval(() => {
         moveCarousel(1);
-      }, 5000);
+      }, 15000);
+
+      // Initialize carousel on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        showSlide(currentSlide);
+      });
 
       // Modal functions
       function openTutorModal(tutor) {
@@ -514,6 +536,55 @@
           closePromoModal();
         }
       };
+
+      // Hamburger Menu JavaScript
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
+        const navCta = document.querySelector(".nav-cta-wrapper");
+        const body = document.body;
+
+        // Create menu overlay
+        const menuOverlay = document.createElement("div");
+        menuOverlay.className = "menu-overlay";
+        document.body.appendChild(menuOverlay);
+
+        // Toggle menu when hamburger is clicked
+        hamburgerMenu.addEventListener("click", function () {
+          hamburgerMenu.classList.toggle("active");
+          navCta.classList.toggle("open");
+          menuOverlay.classList.toggle("active");
+          body.classList.toggle("menu-open");
+        });
+
+        // Close menu when overlay is clicked
+        menuOverlay.addEventListener("click", function () {
+          hamburgerMenu.classList.remove("active");
+          navCta.classList.remove("open");
+          menuOverlay.classList.remove("active");
+          body.classList.remove("menu-open");
+        });
+
+        // Close menu when a navigation link is clicked
+        const navLinks = document.querySelectorAll(".main-navigation a");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            hamburgerMenu.classList.remove("active");
+            navCta.classList.remove("open");
+            menuOverlay.classList.remove("active");
+            body.classList.remove("menu-open");
+          });
+        });
+
+        // Close menu when window is resized to desktop view
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768 && navCta.classList.contains("open")) {
+            hamburgerMenu.classList.remove("active");
+            navCta.classList.remove("open");
+            menuOverlay.classList.remove("active");
+            body.classList.remove("menu-open");
+          }
+        });
+      });
     </script>
   </body>
 </html>
