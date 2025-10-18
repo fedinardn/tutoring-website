@@ -26,6 +26,13 @@
           </a>
         </div>
 
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <div class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         <!-- Navigation and CTA Button -->
         <div class="nav-cta-wrapper">
           <nav class="main-navigation">
@@ -315,5 +322,56 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Hamburger Menu JavaScript
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
+        const navCta = document.querySelector(".nav-cta-wrapper");
+        const body = document.body;
+
+        // Create menu overlay
+        const menuOverlay = document.createElement("div");
+        menuOverlay.className = "menu-overlay";
+        document.body.appendChild(menuOverlay);
+
+        // Toggle menu when hamburger is clicked
+        hamburgerMenu.addEventListener("click", function () {
+          hamburgerMenu.classList.toggle("active");
+          navCta.classList.toggle("open");
+          menuOverlay.classList.toggle("active");
+          body.classList.toggle("menu-open");
+        });
+
+        // Close menu when overlay is clicked
+        menuOverlay.addEventListener("click", function () {
+          hamburgerMenu.classList.remove("active");
+          navCta.classList.remove("open");
+          menuOverlay.classList.remove("active");
+          body.classList.remove("menu-open");
+        });
+
+        // Close menu when a navigation link is clicked
+        const navLinks = document.querySelectorAll(".main-navigation a");
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            hamburgerMenu.classList.remove("active");
+            navCta.classList.remove("open");
+            menuOverlay.classList.remove("active");
+            body.classList.remove("menu-open");
+          });
+        });
+
+        // Close menu when window is resized to desktop view
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768 && navCta.classList.contains("open")) {
+            hamburgerMenu.classList.remove("active");
+            navCta.classList.remove("open");
+            menuOverlay.classList.remove("active");
+            body.classList.remove("menu-open");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
