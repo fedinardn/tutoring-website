@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="/public/styles/site.css" />
   </head>
   <body>
+    <!-- Finals Season Flash Sale Countdown Banner -->
+    <div class="countdown-banner">
+      <div class="countdown-content">
+        <span class="countdown-text">
+          <i class="fas fa-fire"></i>
+          FINALS SEASON FLASH SALE - 50% OFF ALL TUTORING PACKAGES
+          <i class="fas fa-fire"></i>
+        </span>
+        <span class="countdown-timer" id="countdownTimer"></span>
+      </div>
+    </div>
+
     <!-- Promotional Modal -->
     <div id="promoModal">
       <div class="promo-content">
@@ -536,6 +548,30 @@
           closePromoModal();
         }
       };
+
+      // Countdown Timer JavaScript
+      function updateCountdown() {
+        const endDate = new Date('December 31, 2025 23:59:59').getTime();
+        const now = new Date().getTime();
+        const distance = endDate - now;
+
+        if (distance < 0) {
+          document.getElementById('countdownTimer').innerHTML = "SALE ENDED";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('countdownTimer').innerHTML =
+          days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      }
+
+      // Update countdown every second
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
 
       // Hamburger Menu JavaScript
       document.addEventListener("DOMContentLoaded", function () {

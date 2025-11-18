@@ -1188,3 +1188,99 @@ footer {
         font-size: 1.2rem;
     }
 }
+
+/* Countdown Banner Styles */
+.countdown-banner {
+    background: linear-gradient(135deg, #e4b118 0%, #d4a017 100%);
+    color: #00273d;
+    padding: 12px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(228, 177, 24, 0.3);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(228, 177, 24, 0.6);
+    }
+}
+
+.countdown-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.countdown-text {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.countdown-text i {
+    color: #ff4444;
+    animation: flicker 1.5s ease-in-out infinite;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.countdown-timer {
+    font-size: 18px;
+    font-weight: 800;
+    background: #00273d;
+    color: #e4b118;
+    padding: 6px 16px;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+}
+
+/* Responsive countdown banner */
+@media (max-width: 768px) {
+    .countdown-banner {
+        padding: 10px 15px;
+    }
+
+    .countdown-text {
+        font-size: 12px;
+    }
+
+    .countdown-timer {
+        font-size: 14px;
+        padding: 4px 12px;
+    }
+
+    .countdown-content {
+        gap: 10px;
+    }
+}
+
+/* Sale Price Styles */
+.price-original {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+.price-sale {
+    color: #e4b118;
+    font-weight: 700;
+    font-size: 1.1em;
+}
