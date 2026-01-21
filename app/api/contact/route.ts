@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     }
 
     await resend.emails.send({
-      from: 'JU STEM Academy Contact Form <onboarding@resend.dev>',
+      from: 'JU STEM Academy <contact@justemacademy.com>',
       to: 'justemacademy@gmail.com',
       replyTo: email,
       subject: subject || `New message from ${name}`,
