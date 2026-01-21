@@ -1,3 +1,5 @@
+@import url('https://use.typekit.net/wvz7svc.css');
+
 /* Base Styles */
 * {
     margin: 0;
@@ -29,7 +31,7 @@ ul {
     padding: 0 20px;
 }
 
-/* HEADER STYLES - With Blue Background */
+/* HEADER STYLES */
 .site-header {
     background: #00273d;
     padding: 15px 40px;
@@ -44,7 +46,6 @@ ul {
     align-items: center;
 }
 
-/* Logo */
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -63,14 +64,12 @@ ul {
     letter-spacing: 1px;
 }
 
-/* Navigation and CTA wrapper */
 .nav-cta-wrapper {
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-/* Navigation */
 .main-navigation ul {
     display: flex;
     gap: 30px;
@@ -105,7 +104,6 @@ ul {
     background-color: #e4b118;
 }
 
-/* Using original yellow CTA button */
 .header-cta-button {
     display: inline-block;
     background-color: #e4b118;
@@ -128,7 +126,6 @@ ul {
     text-decoration: none;
 }
 
-/* Hamburger Menu Styles */
 .hamburger-menu {
     display: none;
     cursor: pointer;
@@ -150,8 +147,6 @@ ul {
     border-radius: 3px;
     transition: all 0.3s ease;
 }
-
-/* END OF HEADER STYLES */
 
 /* Section Styles */
 section {
@@ -224,6 +219,7 @@ h2::after {
     text-align: center;
     color: white;
     z-index: 0;
+    padding: 0 !important;
 }
 
 .background-image {
@@ -316,13 +312,6 @@ h2::after {
     margin-top: 10px;
 }
 
-.click-learn-more {
-    color: #e4b118;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-top: 15px;
-}
-
 /* Modal Styles */
 .modal {
     display: none;
@@ -334,6 +323,10 @@ h2::after {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal.open {
+    display: block;
 }
 
 .modal-content {
@@ -387,8 +380,7 @@ h2::after {
     transition: color 0.3s ease;
 }
 
-.close:hover,
-.close:focus {
+.close:hover {
     color: #00273d;
 }
 
@@ -471,7 +463,6 @@ h2::after {
 .carousel-container {
     position: relative;
     overflow: hidden;
-    /* Removed fixed height to allow for dynamic sizing */
 }
 
 .testimonial-card {
@@ -479,7 +470,6 @@ h2::after {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-    /* Changed from absolute to relative positioning */
     position: relative;
     display: none;
     width: 100%;
@@ -809,23 +799,6 @@ footer {
     margin-bottom: 15px;
 }
 
-.contact-info {
-    margin: 30px 0;
-}
-
-.contact-item {
-    color: #e0e0e0;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px 20px;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-.contact-item:hover {
-    color: #e4b118;
-}
-
 .footer-bottom {
     margin-top: 40px;
     padding-top: 30px;
@@ -860,8 +833,8 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Promotional Modal Styles */
-#promoModal {
+/* Promo Modal */
+.promo-modal {
     display: none;
     position: fixed;
     z-index: 2000;
@@ -875,7 +848,8 @@ footer {
     transition: opacity 0.3s ease-in-out;
 }
 
-#promoModal.visible {
+.promo-modal.visible {
+    display: block;
     opacity: 1;
 }
 
@@ -894,7 +868,7 @@ footer {
     transition: transform 0.3s ease-in-out;
 }
 
-#promoModal.visible .promo-content {
+.promo-modal.visible .promo-content {
     transform: scale(1);
 }
 
@@ -972,7 +946,7 @@ footer {
     margin-right: 10px;
 }
 
-/* Menu Overlay when menu is open */
+/* Menu Overlay */
 .menu-overlay {
     display: none;
     position: fixed;
@@ -988,10 +962,115 @@ footer {
     display: block;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1024px) {
+/* Contact Form Styles */
+.contact-section {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
 
-    /* Ensure header container remains row-oriented */
+.contact-form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-box h3 {
+    font-size: 1.5rem;
+    color: #00273d;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #00273d;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'haskoy', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #e4b118;
+    box-shadow: 0 0 0 3px rgba(228, 177, 24, 0.1);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-submit-btn {
+    display: inline-block;
+    background: #e4b118;
+    color: #00273d;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(228, 177, 24, 0.3);
+    font-family: 'haskoy', sans-serif;
+    width: 100%;
+}
+
+.form-submit-btn:hover {
+    background: #d4a115;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(228, 177, 24, 0.4);
+}
+
+.form-submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.form-status {
+    margin-top: 15px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+    display: block;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
     .header-container {
         flex-direction: row;
         justify-content: flex-start;
@@ -999,7 +1078,6 @@ footer {
         position: relative;
     }
 
-    /* Show hamburger menu at this breakpoint */
     .hamburger-menu {
         display: flex;
         position: absolute;
@@ -1008,7 +1086,6 @@ footer {
         transform: translateY(-50%);
     }
 
-    /* Hide the navigation when not active */
     .nav-cta-wrapper {
         position: fixed;
         right: -330px;
@@ -1028,7 +1105,6 @@ footer {
         right: 0;
     }
 
-    /* Style menu items in a column */
     .main-navigation ul {
         flex-direction: column;
         align-items: flex-start;
@@ -1046,7 +1122,6 @@ footer {
         width: 100%;
     }
 
-    /* Style the CTA button to fit the slide-out menu */
     .cta-button-container {
         margin-top: 30px;
         width: 100%;
@@ -1060,7 +1135,6 @@ footer {
         font-size: 16px;
     }
 
-    /* Hamburger Animation */
     .hamburger-menu.active span:nth-child(1) {
         transform: translateY(10px) rotate(45deg);
     }
@@ -1073,21 +1147,12 @@ footer {
         transform: translateY(-10px) rotate(-45deg);
     }
 
-    /* Dark Overlay when menu is open */
-    .menu-overlay.active {
-        display: block;
-    }
-
-    /* Prevent body scroll when menu is open */
     body.menu-open {
         overflow: hidden;
     }
 }
 
-/* Additional mobile-specific adjustments */
 @media (max-width: 768px) {
-
-    /* Mobile typography adjustments */
     h1 {
         font-size: 2.5rem;
     }
@@ -1104,20 +1169,18 @@ footer {
         font-size: 2rem;
     }
 
-    /* Section spacing */
     section {
         padding: 50px 20px;
     }
 
     .mission-section {
-        padding: 80px 20px;
+        padding: 80px 20px !important;
     }
 
     .subjects-box {
         padding: 30px 20px;
     }
 
-    /* Carousel Responsive */
     .testimonials-carousel {
         padding: 0 40px;
     }
@@ -1141,7 +1204,6 @@ footer {
         line-height: 1.6;
     }
 
-    /* Modal Responsive */
     .modal-content {
         margin: 10% 20px;
         padding: 30px 20px;
@@ -1152,7 +1214,6 @@ footer {
         height: 150px;
     }
 
-    /* Team Page Responsive */
     .team-member {
         flex-direction: column;
         align-items: center;
@@ -1164,7 +1225,6 @@ footer {
         max-width: 300px;
     }
 
-    /* Services & Testimonials Grid Responsive */
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -1173,7 +1233,6 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Promo Modal Responsive */
     .promo-content {
         margin: 20% auto;
         padding: 30px 20px;
@@ -1187,100 +1246,8 @@ footer {
     .promo-message {
         font-size: 1.2rem;
     }
-}
 
-/* Countdown Banner Styles */
-.countdown-banner {
-    background: linear-gradient(135deg, #e4b118 0%, #d4a017 100%);
-    color: #00273d;
-    padding: 12px 20px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-    0%, 100% {
-        box-shadow: 0 2px 8px rgba(228, 177, 24, 0.3);
+    .contact-form-box {
+        padding: 30px 20px;
     }
-    50% {
-        box-shadow: 0 2px 12px rgba(228, 177, 24, 0.6);
-    }
-}
-
-.countdown-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.countdown-text {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.countdown-text i {
-    color: #ff4444;
-    animation: flicker 1.5s ease-in-out infinite;
-}
-
-@keyframes flicker {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.7;
-    }
-}
-
-.countdown-timer {
-    font-size: 18px;
-    font-weight: 800;
-    background: #00273d;
-    color: #e4b118;
-    padding: 6px 16px;
-    border-radius: 20px;
-    letter-spacing: 1.5px;
-}
-
-/* Responsive countdown banner */
-@media (max-width: 768px) {
-    .countdown-banner {
-        padding: 10px 15px;
-    }
-
-    .countdown-text {
-        font-size: 12px;
-    }
-
-    .countdown-timer {
-        font-size: 14px;
-        padding: 4px 12px;
-    }
-
-    .countdown-content {
-        gap: 10px;
-    }
-}
-
-/* Sale Price Styles */
-.price-original {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 0.9em;
-    margin-right: 8px;
-}
-
-.price-sale {
-    color: #e4b118;
-    font-weight: 700;
-    font-size: 1.1em;
 }
