@@ -255,7 +255,7 @@ h2::after {
     margin: 0 auto;
     text-align: center;
     font-size: 1.15rem;
-    color: #555;
+    color: #000;
     line-height: 1.8;
 }
 
@@ -307,7 +307,7 @@ h2::after {
 }
 
 .tutor-degree {
-    color: #666;
+    color: #000;
     font-size: 0.95rem;
     margin-top: 10px;
 }
@@ -364,13 +364,13 @@ h2::after {
 }
 
 .modal-bio {
-    color: #555;
+    color: #000;
     line-height: 1.8;
     font-size: 1.05rem;
 }
 
 .close {
-    color: #999;
+    color: #000;
     position: absolute;
     right: 25px;
     top: 20px;
@@ -408,7 +408,7 @@ h2::after {
 }
 
 .feature-card p {
-    color: #666;
+    color: #000;
     line-height: 1.7;
 }
 
@@ -561,7 +561,7 @@ h2::after {
 }
 
 .testimonial-text {
-    color: #555;
+    color: #000;
     line-height: 1.8;
     font-size: 1rem;
     margin-bottom: 20px;
@@ -582,12 +582,65 @@ h2::after {
 
 .testimonial-role {
     text-align: center;
-    color: #666;
+    color: #000;
     font-size: 0.95rem;
     margin-top: 5px;
 }
 
 /* Services Page Styles */
+.subjects-section {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.subjects-section h3 {
+    font-size: 1.8rem;
+    color: #00273d;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.subject-item {
+    background: white;
+    padding: 18px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #e4b118;
+    font-weight: 600;
+    color: #00273d;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+
+.packages-section {
+    margin-top: 60px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #e4b118;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.packages-section h3 {
+    font-size: 1.8rem;
+    color: #00273d;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
 .services-grid {
     display: grid;
     gap: 40px;
@@ -617,7 +670,7 @@ h2::after {
 }
 
 .service-description {
-    color: #666;
+    color: #000;
     line-height: 1.7;
     margin-bottom: 25px;
 }
@@ -627,7 +680,6 @@ h2::after {
     background: #f8f9fa;
     padding: 25px;
     border-radius: 8px;
-    border-left: 4px solid #e4b118;
 }
 
 .packages-list h4 {
@@ -659,7 +711,7 @@ h2::after {
 }
 
 .package-details {
-    color: #666;
+    color: #000;
     font-size: 0.95rem;
     font-weight: 500;
 }
@@ -670,6 +722,27 @@ h2::after {
     font-size: 1.3rem;
     white-space: nowrap;
     margin-left: 20px;
+}
+
+.package-buy-button {
+    display: inline-block;
+    background: #e4b118;
+    color: #00273d;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(228, 177, 24, 0.3);
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.package-buy-button:hover {
+    background: #d4a115;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(228, 177, 24, 0.4);
 }
 
 .cta-container {
@@ -723,7 +796,7 @@ h2::after {
 }
 
 .team-bio {
-    color: #555;
+    color: #000;
     line-height: 1.8;
     font-size: 1.05rem;
 }

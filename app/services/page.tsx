@@ -2,35 +2,26 @@
 
 import CalendlyButton from '@/components/CalendlyButton';
 
-const packages = [
-  { name: 'Trial Package', details: '1 hour', price: '$25' },
-  { name: 'Foundation Builder', details: '5 hours', price: '$250' },
-  { name: 'Academic Achiever', details: '10 hours', price: '$550' },
-  { name: 'Excellence Program', details: '20 hours', price: '$1,100' },
-  { name: "Scholar's Edge", details: '30 hours', price: '$1,500' },
+const subjects = [
+  'General Chemistry',
+  'Organic Chemistry',
+  'MCAT',
+  'Biology',
+  'Biochemistry',
+  'Physics',
+  'Algebra',
+  'Medical School Applications',
+  'College Applications',
+  'AP Exams',
+  'SAT / ACT',
 ];
 
-const services = [
-  {
-    title: 'College Course Tutoring',
-    price: 'Starting at $25/hour',
-    description: 'Expert help with undergraduate STEM courses including Chemistry, Biology, Physics, and more.',
-  },
-  {
-    title: 'SAT/ACT Prep',
-    price: 'Starting at $25/hour',
-    description: 'Comprehensive test preparation to maximize your standardized test scores for college admissions.',
-  },
-  {
-    title: 'K-12 Tutoring',
-    price: 'Starting at $25/hour',
-    description: 'Personalized tutoring for elementary through high school students in all STEM subjects.',
-  },
-  {
-    title: 'College Application & Essays Consulting',
-    price: 'Starting at $25/hour',
-    description: 'Expert guidance through the college application process and essay writing from Cornell graduates.',
-  },
+const packages = [
+  { name: 'Trial Package', details: '1 hour', price: '$25', link: 'https://buy.stripe.com/5kQbJ1eVicol0Fz4Fnf3a03' },
+  { name: 'Foundation Builder', details: '5 hours', price: '$250', link: 'https://buy.stripe.com/28E9ATcNaagdewpfk1f3a04' },
+  { name: 'Academic Achiever', details: '10 hours', price: '$550', link: 'https://buy.stripe.com/28E4gzaF23RP0Fz7Rzf3a05' },
+  { name: 'Excellence Program', details: '20 hours', price: '$1,100', link: 'https://buy.stripe.com/eVq4gz8wUbkhewpfk1f3a06' },
+  { name: "Scholar's Edge", details: '30 hours', price: '$1,500', link: 'https://buy.stripe.com/7sY28r28w3RP2NH5Jrf3a07' },
 ];
 
 export default function ServicesPage() {
@@ -43,26 +34,38 @@ export default function ServicesPage() {
           excel in your academic journey.
         </p>
 
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <div key={index} className="service-item">
-              <h3>{service.title}</h3>
-              <p className="service-price">{service.price}</p>
-              <p className="service-description">{service.description}</p>
-              <div className="packages-list">
-                <h4>Available Packages:</h4>
-                {packages.map((pkg, pkgIndex) => (
-                  <div key={pkgIndex} className="package-item">
-                    <div>
-                      <div className="package-name">{pkg.name}</div>
-                      <div className="package-details">{pkg.details}</div>
-                    </div>
-                    <div className="package-price">{pkg.price}</div>
-                  </div>
-                ))}
+        <div className="subjects-section">
+          <h3>What We Teach</h3>
+          <div className="subjects-grid">
+            {subjects.map((subject, index) => (
+              <div key={index} className="subject-item">
+                {subject}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className="packages-section">
+          <h3>Packages</h3>
+          <div className="packages-list">
+            {packages.map((pkg, index) => (
+              <div key={index} className="package-item">
+                <div>
+                  <div className="package-name">{pkg.name}</div>
+                  <div className="package-details">{pkg.details}</div>
+                </div>
+                <div className="package-price">{pkg.price}</div>
+                <a
+                  href={pkg.link}
+                  className="package-buy-button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Buy Now
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="cta-container">
