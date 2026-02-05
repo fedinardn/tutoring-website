@@ -17,7 +17,7 @@ const subjects = [
 ];
 
 const packages = [
-  { name: 'Trial Package', details: '1 hour', price: '$25', link: 'https://buy.stripe.com/5kQbJ1eVicol0Fz4Fnf3a03' },
+  { name: 'Trial Package', details: '1 hour', price: '$40', link: 'https://buy.stripe.com/dRmdR9bJ6dspag9dbTf3a08' },
   { name: 'Foundation Builder', details: '5 hours', price: '$250', link: 'https://buy.stripe.com/28E9ATcNaagdewpfk1f3a04' },
   { name: 'Academic Achiever', details: '10 hours', price: '$550', link: 'https://buy.stripe.com/28E4gzaF23RP0Fz7Rzf3a05' },
   { name: 'Excellence Program', details: '20 hours', price: '$1,100', link: 'https://buy.stripe.com/eVq4gz8wUbkhewpfk1f3a06' },
