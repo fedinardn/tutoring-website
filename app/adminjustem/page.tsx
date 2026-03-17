@@ -637,7 +637,7 @@ export default function AdminPage() {
           <div className="admin-card">
             <h3 className="admin-card-title">User Management</h3>
             <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '20px' }}>
-              All accounts that have signed up at /admin. Only admins can access the panel.
+              All accounts that have signed up at /adminjustem. Only admins can access the panel.
             </p>
             {usersLoading ? <p style={{ color: '#666' }}>Loading…</p> : (
               <div className="admin-list">

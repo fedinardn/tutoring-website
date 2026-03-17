@@ -22,7 +22,7 @@ export default function TestimonialsGrid() {
     return (
       <p style={{ textAlign: 'center', padding: '40px 0', color: '#666' }}>
         No reviews yet. Add some from the{' '}
-        <a href="/admin" style={{ color: '#e4b118' }}>admin panel</a>.
+        <a href="/adminjustem" style={{ color: '#e4b118' }}>admin panel</a>.
       </p>
     );
   }
