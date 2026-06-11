@@ -13,7 +13,7 @@ const tutors = {
     name: 'Joseph Agyemang',
     title: 'Co-Founder & Lead Consultant',
     image: '/images/joseph.jpg',
-    bio: "Hi! I'm Joseph, Co-Founder and Lead Consultant of JU STEM Academy. I graduated Magna cum Laude from Cornell University with a degree in Biology and Society, and I've spent the past 4+ years discovering my passion for education. What I love most about this work is simple: every tutoring session is a chance to transform how a student sees learning and help them believe in their own abilities. Outside the classroom, I'm a die-hard Arsenal fan. I recently made the trip to the UK to watch them play live, and it was absolutely electric! I believe the beautiful game and STEM have a lot in common: both require strategy, creativity, and persistence.",
+    bio: "Hi! I'm Joseph, Co-Founder and Lead Consultant of JU STEM Academy. I graduated Magna cum Laude from Cornell University with a degree in Biology and Society, and I am now a medical student at the University of Pennsylvania's Perelman School of Medicine. I've spent the past 4+ years discovering my passion for education. What I love most about this work is simple: every tutoring session is a chance to transform how a student sees learning and help them believe in their own abilities. Outside the classroom, I'm a die-hard Arsenal fan. I recently made the trip to the UK to watch them play live, and it was absolutely electric! I believe the beautiful game and STEM have a lot in common: both require strategy, creativity, and persistence.",
   },
   ukana: {
     name: 'Ukana Bassey',
@@ -116,7 +116,7 @@ export default function Home() {
               />
               <h3 className="tutor-name">Joseph Agyemang</h3>
               <p className="tutor-title">Co-Founder & Lead Consultant</p>
-              <p className="tutor-degree">Cornell University<br />Magna Cum Laude</p>
+              <p className="tutor-degree">University of Pennsylvania<br />MS1</p>
             </div>
             <div className="tutor-card" onClick={() => setSelectedTutor('ukana')}>
               <Image

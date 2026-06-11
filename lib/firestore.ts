@@ -199,3 +199,16 @@ export async function deleteBlogPost(id: string): Promise<void> {
   await deleteDoc(doc(db, 'blogPosts', id));
 }
 
+// ─── Settings ─────────────────────────────────────────────────────────────────
+
+export async function getPrices(): Promise<Record<string, string>> {
+  const snap = await getDoc(doc(db, 'settings', 'prices'));
+  if (!snap.exists()) return {};
+  return snap.data() as Record<string, string>;
+}
+
+export async function setPrices(prices: Record<string, string>): Promise<void> {
+  await setDoc(doc(db, 'settings', 'prices'), prices);
+}
+
+

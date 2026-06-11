@@ -16,7 +16,7 @@ import {
   getReviews, addReview, updateReview, deleteReview,
   getBlogPosts, addBlogPost, updateBlogPost, deleteBlogPost,
   getUserRecord, createUserRecord, getUsers, updateUserRole,
-  parseBlocks, toSlug,
+  parseBlocks, toSlug, getPrices, setPrices,
 } from '@/lib/firestore';
 
 const googleProvider = new GoogleAuthProvider();
@@ -54,7 +54,11 @@ export default function AdminPage() {
   const [authLoading, setAuthLoading] = useState(false);
 
   // Panel
-  const [tab, setTab] = useState<'reviews' | 'blog' | 'users'>('reviews');
+  const [tab, setTab] = useState<'reviews' | 'blog' | 'users' | 'prices'>('reviews');
+
+  // Prices
+  const [pricesState, setPricesState] = useState<Record<string, string>>({});
+  const [pricesLoading, setPricesLoading] = useState(false);
 
   // Reviews
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -89,7 +93,7 @@ export default function AdminPage() {
   }, []);
 
   useEffect(() => {
-    if (authState === 'granted') { loadReviews(); loadPosts(); loadUsers(); }
+    if (authState === 'granted') { loadReviews(); loadPosts(); loadUsers(); loadPrices(); }
   }, [authState]);
 
   // ── Auth handlers ─────────────────────────────────────────────────────────
@@ -234,6 +238,22 @@ export default function AdminPage() {
     setBlocks(prev => prev.filter(b => b.id !== id));
   }
 
+  // ── Prices ────────────────────────────────────────────────────────────────
+
+  async function loadPrices() {
+    setPricesLoading(true);
+    setPricesState(await getPrices());
+    setPricesLoading(false);
+  }
+
+  async function handleSavePrices(e: React.FormEvent) {
+    e.preventDefault();
+    setPricesLoading(true);
+    await setPrices(pricesState);
+    setPricesLoading(false);
+    alert('Prices saved!');
+  }
+
   // ── Users ─────────────────────────────────────────────────────────────────
 
   async function loadUsers() {
@@ -340,9 +360,9 @@ export default function AdminPage() {
         </div>
 
         <div className="admin-tabs">
-          {(['reviews', 'blog', 'users'] as const).map(t => (
+          {(['reviews', 'blog', 'users', 'prices'] as const).map(t => (
             <button key={t} className={`admin-tab-btn ${tab === t ? 'active' : ''}`} onClick={() => setTab(t)}>
-              {t === 'reviews' ? `Reviews (${reviews.length})` : t === 'blog' ? `Blog Posts (${posts.length})` : `Users (${users.length})`}
+              {t === 'reviews' ? `Reviews (${reviews.length})` : t === 'blog' ? `Blog Posts (${posts.length})` : t === 'users' ? `Users (${users.length})` : 'Prices'}
             </button>
           ))}
         </div>
@@ -663,6 +683,39 @@ export default function AdminPage() {
                   </div>
                 ))}
               </div>
+            )}
+          </div>
+        )}
+
+        {/* ── Prices Tab ────────────────────────────────────────────────── */}
+        {tab === 'prices' && (
+          <div className="admin-card">
+            <h3 className="admin-card-title">Manage Prices</h3>
+            <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '20px' }}>
+              Update the prices shown on the Services page.
+            </p>
+            {pricesLoading && Object.keys(pricesState).length === 0 ? <p style={{ color: '#666' }}>Loading…</p> : (
+              <form onSubmit={handleSavePrices} className="admin-form">
+                {Object.entries(pricesState).map(([key, value]) => (
+                  <div key={key} className="form-group">
+                    <label>{key}</label>
+                    <input
+                      type="text"
+                      value={value}
+                      onChange={e => setPricesState({ ...pricesState, [key]: e.target.value })}
+                      required
+                    />
+                  </div>
+                ))}
+                {Object.keys(pricesState).length === 0 && (
+                  <p style={{ color: '#666', marginBottom: '20px' }}>No prices found. They need to be seeded.</p>
+                )}
+                <div className="admin-form-actions">
+                  <button type="submit" className="admin-btn" disabled={pricesLoading || Object.keys(pricesState).length === 0}>
+                    {pricesLoading ? 'Saving...' : 'Save Prices'}
+                  </button>
+                </div>
+              </form>
             )}
           </div>
         )}

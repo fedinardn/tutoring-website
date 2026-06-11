@@ -1,6 +1,8 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import CalendlyButton from '@/components/CalendlyButton';
+import { getPrices } from '@/lib/firestore';
 
 const subjects = [
   'General Chemistry',
@@ -17,14 +19,26 @@ const subjects = [
 ];
 
 const packages = [
-  { name: 'Trial Package', details: '1 hour', price: '$40', link: 'https://buy.stripe.com/dRmdR9bJ6dspag9dbTf3a08' },
-  { name: 'Foundation Builder', details: '5 hours', price: '$250', link: 'https://buy.stripe.com/28E9ATcNaagdewpfk1f3a04' },
-  { name: 'Academic Achiever', details: '10 hours', price: '$550', link: 'https://buy.stripe.com/28E4gzaF23RP0Fz7Rzf3a05' },
-  { name: 'Excellence Program', details: '20 hours', price: '$1,100', link: 'https://buy.stripe.com/eVq4gz8wUbkhewpfk1f3a06' },
-  { name: "Scholar's Edge", details: '30 hours', price: '$1,500', link: 'https://buy.stripe.com/7sY28r28w3RP2NH5Jrf3a07' },
+  { name: 'Trial Package', details: '1 hour', link: 'https://buy.stripe.com/dRmdR9bJ6dspag9dbTf3a08' },
+  { name: 'Foundation Builder', details: '5 hours', link: 'https://buy.stripe.com/28E9ATcNaagdewpfk1f3a04' },
+  { name: 'Academic Achiever', details: '10 hours', link: 'https://buy.stripe.com/28E4gzaF23RP0Fz7Rzf3a05' },
+  { name: 'Excellence Program', details: '20 hours', link: 'https://buy.stripe.com/eVq4gz8wUbkhewpfk1f3a06' },
+  { name: "Scholar's Edge", details: '30 hours', link: 'https://buy.stripe.com/7sY28r28w3RP2NH5Jrf3a07' },
 ];
 
 export default function ServicesPage() {
+  const [prices, setPrices] = useState<Record<string, string>>({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadPrices() {
+      const fetchedPrices = await getPrices();
+      setPrices(fetchedPrices);
+      setLoading(false);
+    }
+    loadPrices();
+  }, []);
+
   return (
     <section>
       <div className="container">
@@ -54,7 +68,9 @@ export default function ServicesPage() {
                   <div className="package-name">{pkg.name}</div>
                   <div className="package-details">{pkg.details}</div>
                 </div>
-                <div className="package-price">{pkg.price}</div>
+                <div className="package-price">
+                  {loading ? '...' : prices[pkg.name] || 'N/A'}
+                </div>
                 <a
                   href={pkg.link}
                   className="package-buy-button"
