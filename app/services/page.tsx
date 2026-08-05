@@ -1,8 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import CalendlyButton from '@/components/CalendlyButton';
-import { getPrices } from '@/lib/firestore';
 
 const subjects = [
   'General Chemistry',
@@ -27,18 +25,6 @@ const packages = [
 ];
 
 export default function ServicesPage() {
-  const [prices, setPrices] = useState<Record<string, string>>({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function loadPrices() {
-      const fetchedPrices = await getPrices();
-      setPrices(fetchedPrices);
-      setLoading(false);
-    }
-    loadPrices();
-  }, []);
-
   return (
     <section>
       <div className="container">
@@ -61,15 +47,13 @@ export default function ServicesPage() {
 
         <div className="packages-section">
           <h3>Packages</h3>
+          <p className="packages-intro">Starting at $60</p>
           <div className="packages-list">
             {packages.map((pkg, index) => (
               <div key={index} className="package-item">
                 <div>
                   <div className="package-name">{pkg.name}</div>
                   <div className="package-details">{pkg.details}</div>
-                </div>
-                <div className="package-price">
-                  {loading ? '...' : prices[pkg.name] || 'N/A'}
                 </div>
                 <a
                   href={pkg.link}

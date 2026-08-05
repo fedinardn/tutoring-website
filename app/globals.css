@@ -49,6 +49,7 @@ ul {
 .logo-wrapper {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo-wrapper img {
@@ -62,17 +63,19 @@ ul {
     margin-left: 10px;
     color: #e4b118;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .nav-cta-wrapper {
     display: flex;
     align-items: center;
     gap: 30px;
+    margin-left: 48px;
 }
 
 .main-navigation ul {
     display: flex;
-    gap: 30px;
+    gap: 24px;
 }
 
 .main-navigation li a {
@@ -636,9 +639,17 @@ h2::after {
 .packages-section h3 {
     font-size: 1.8rem;
     color: #00273d;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     font-weight: 700;
     text-align: center;
+}
+
+.packages-intro {
+    text-align: center;
+    color: #e4b118;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .services-grid {
@@ -1359,12 +1370,6 @@ footer {
 
     .package-item > div:first-child {
         flex: 1 1 100%;
-    }
-
-    .package-price {
-        width: auto;
-        text-align: left;
-        font-size: 1.1rem;
     }
 
     .package-buy-button {
@@ -2319,4 +2324,151 @@ footer {
     .blog-block-h2 { font-size: 1.5rem; }
     .blog-block-h3 { font-size: 1.15rem; }
     .blog-cover-image { max-height: 240px; }
+}
+
+
+/* ============================================================
+   BECOME A TUTOR — Application Form
+   ============================================================ */
+.tutor-form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.tutor-form-box .form-group select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'haskoy', sans-serif;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutor-form-box .form-group select:focus {
+    outline: none;
+    border-color: #e4b118;
+    box-shadow: 0 0 0 3px rgba(228, 177, 24, 0.1);
+}
+
+.form-help-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.checkbox-item input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    accent-color: #e4b118;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-item label {
+    margin: 0;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.checkbox-item a {
+    color: #00273d;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.checkbox-item.required-check {
+    background: #fff8e6;
+    border: 1px solid #e4b118;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.handshake-callout {
+    background: #f8f9fa;
+    border-left: 4px solid #e4b118;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin: 10px 0 30px;
+}
+
+.handshake-callout p {
+    margin: 0;
+    color: #00273d;
+    line-height: 1.6;
+}
+
+.handshake-callout a {
+    color: #00273d;
+    font-weight: 600;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.handshake-callout a:hover {
+    color: #e4b118;
+}
+
+.handshake-button {
+    display: inline-block;
+    background: #00273d;
+    color: white !important;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.handshake-button:hover {
+    background: #e4b118;
+    color: #00273d !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(228, 177, 24, 0.3);
+}
+
+.compensation-note {
+    font-weight: 600;
+    color: #00273d;
+}
+
+@media (max-width: 768px) {
+    .tutor-form-box {
+        padding: 25px;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
 }
