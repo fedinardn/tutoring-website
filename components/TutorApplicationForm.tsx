@@ -32,8 +32,6 @@ const CONTACT_EMAIL = 'justemacademy@gmail.com';
 const HANDSHAKE_URL =
   'https://app.joinhandshake.com/public/jobs/11250005?utm_source=web&utm_campaign=job_share&utm_medium=copy_link&utm_content=emp-copy_link-job_page';
 
-const GRADUATION_YEARS = ['2025', '2026', '2027', '2028', '2029', '2030'];
-
 const EXPERIENCE_OPTIONS = [
   'Pre-professional Development',
   'High School Subjects',
@@ -236,22 +234,15 @@ export default function TutorApplicationForm() {
 
         <div className="form-group">
           <label htmlFor="ta-graduation-year">Graduation Year *</label>
-          <select
+          <input
+            type="text"
             id="ta-graduation-year"
             name="graduationYear"
             required
+            placeholder="e.g. 2024"
             value={formData.graduationYear}
             onChange={(e) => setFormData({ ...formData, graduationYear: e.target.value })}
-          >
-            <option value="" disabled>
-              Select a year
-            </option>
-            {GRADUATION_YEARS.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
+          />
         </div>
 
         <div className="form-group">
