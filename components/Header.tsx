@@ -12,6 +12,7 @@ const navLinks = [
   { href: '/team', label: 'OUR TEAM' },
   { href: '/testimonials', label: 'TESTIMONIALS' },
   { href: '/blog', label: 'BLOG' },
+  { href: '/become-a-tutor', label: 'BECOME A TUTOR' },
   { href: '/contact', label: 'CONTACT' },
 ];
 
