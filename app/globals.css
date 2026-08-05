@@ -639,9 +639,17 @@ h2::after {
 .packages-section h3 {
     font-size: 1.8rem;
     color: #00273d;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     font-weight: 700;
     text-align: center;
+}
+
+.packages-intro {
+    text-align: center;
+    color: #e4b118;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
 }
 
 .services-grid {
@@ -1362,12 +1370,6 @@ footer {
 
     .package-item > div:first-child {
         flex: 1 1 100%;
-    }
-
-    .package-price {
-        width: auto;
-        text-align: left;
-        font-size: 1.1rem;
     }
 
     .package-buy-button {
