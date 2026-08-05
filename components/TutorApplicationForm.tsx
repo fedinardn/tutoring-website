@@ -58,6 +58,7 @@ export default function TutorApplicationForm() {
     name: '',
     email: '',
     phone: '',
+    university: '',
     graduationYear: '',
     major: '',
     gpa: '',
@@ -98,6 +99,7 @@ export default function TutorApplicationForm() {
       `Name: ${formData.name}`,
       `Email: ${formData.email}`,
       `Phone: ${formData.phone}`,
+      `University Attended: ${formData.university}`,
       `Graduation Year: ${formData.graduationYear}`,
       `Major: ${formData.major}`,
       `GPA: ${formData.gpa}`,
@@ -167,6 +169,7 @@ export default function TutorApplicationForm() {
           name: '',
           email: '',
           phone: '',
+          university: '',
           graduationYear: '',
           major: '',
           gpa: '',
@@ -249,6 +252,19 @@ export default function TutorApplicationForm() {
               </option>
             ))}
           </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="ta-university">Which university did you attend? *</label>
+          <input
+            type="text"
+            id="ta-university"
+            name="university"
+            required
+            placeholder="e.g. Cornell University"
+            value={formData.university}
+            onChange={(e) => setFormData({ ...formData, university: e.target.value })}
+          />
         </div>
 
         <div className="form-group">
@@ -384,7 +400,7 @@ export default function TutorApplicationForm() {
               }
             />
             <label htmlFor="ta-transcript">
-              <strong>Mandatory:</strong> email us your unofficial transcript to{' '}
+              <strong>Mandatory:</strong> email your unofficial transcript to{' '}
               <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </label>
           </div>

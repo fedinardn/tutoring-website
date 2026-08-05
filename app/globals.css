@@ -49,6 +49,7 @@ ul {
 .logo-wrapper {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo-wrapper img {
@@ -62,17 +63,19 @@ ul {
     margin-left: 10px;
     color: #e4b118;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .nav-cta-wrapper {
     display: flex;
     align-items: center;
     gap: 30px;
+    margin-left: 48px;
 }
 
 .main-navigation ul {
     display: flex;
-    gap: 30px;
+    gap: 24px;
 }
 
 .main-navigation li a {
