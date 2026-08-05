@@ -2432,6 +2432,27 @@ footer {
     color: #e4b118;
 }
 
+.handshake-button {
+    display: inline-block;
+    background: #00273d;
+    color: white !important;
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.handshake-button:hover {
+    background: #e4b118;
+    color: #00273d !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(228, 177, 24, 0.3);
+}
+
 .compensation-note {
     font-weight: 600;
     color: #00273d;

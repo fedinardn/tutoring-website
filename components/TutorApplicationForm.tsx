@@ -409,11 +409,14 @@ export default function TutorApplicationForm() {
           <p>
             <strong>Or apply through our Handshake posting:</strong>
           </p>
-          <p>
-            <a href={HANDSHAKE_URL} target="_blank" rel="noopener noreferrer">
-              {HANDSHAKE_URL}
-            </a>
-          </p>
+          <a 
+            href={HANDSHAKE_URL} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="handshake-button"
+          >
+            Apply via Handshake
+          </a>
         </div>
 
         <button type="submit" className="form-submit-btn" disabled={status === 'loading'}>
