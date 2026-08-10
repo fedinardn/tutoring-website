@@ -4,28 +4,17 @@ import { useState, useEffect } from 'react';
 
 /*
  * ============================================================================
- *  FORMSPREE SETUP (ACTION REQUIRED)
+ *  FORMSPREE CONFIGURATION
  * ----------------------------------------------------------------------------
  *  Applications submitted through this form are emailed to justemacademy@gmail.com
  *  using Formspree (https://formspree.io) — a free service that forwards form
  *  submissions to your inbox with no backend required.
  *
- *  TO ACTIVATE:
- *    1. Go to https://formspree.io and sign up (or log in) using
- *       justemacademy@gmail.com.
- *    2. Click "New Form", give it a name (e.g. "Tutor Applications"), and set
- *       the send-to email to justemacademy@gmail.com.
- *    3. Formspree will give you an endpoint that looks like:
- *          https://formspree.io/f/abcdwxyz
- *       Copy the form ID (the part after "/f/", e.g. "abcdwxyz").
- *    4. Replace the placeholder "YOUR_FORM_ID" below with that real ID.
- *
- *  Until a real ID is set, submissions will fall back to opening the visitor's
- *  email client (mailto:) addressed to justemacademy@gmail.com so no
- *  application is ever lost.
+ *  Form ID: xkjwrnjw
+ *  Endpoint: https://formspree.io/f/xkjwrnjw
  * ============================================================================
  */
-const FORMSPREE_FORM_ID = 'YOUR_FORM_ID';
+const FORMSPREE_FORM_ID = 'xkjwrnjw';
 const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORMSPREE_FORM_ID}`;
 const CONTACT_EMAIL = 'justemacademy@gmail.com';
 
@@ -90,33 +79,6 @@ export default function TutorApplicationForm() {
     );
   };
 
-  // Fallback: build a mailto: link with the application details so nothing is
-  // lost if Formspree has not been configured yet.
-  const buildMailtoFallback = () => {
-    const lines = [
-      `Name: ${formData.name}`,
-      `Email: ${formData.email}`,
-      `Phone: ${formData.phone}`,
-      `University Attended: ${formData.university}`,
-      `Graduation Year: ${formData.graduationYear}`,
-      `Major: ${formData.major}`,
-      `GPA: ${formData.gpa}`,
-      `Tutoring Experience: ${experience.join(', ') || 'None selected'}`,
-      `A/A- Courses & TA/Peer Tutor Experience: ${formData.coursesARange}`,
-      `SAT Score (out of 1600): ${formData.satScore}`,
-      `ACT Score (out of 36): ${formData.actScore}`,
-      `Availability per week: ${formData.availability}`,
-      `Background / Qualifications: ${formData.background}`,
-      `Transcript acknowledged: ${formData.transcriptAcknowledged ? 'Yes' : 'No'}`,
-      `Resume attached separately: ${formData.resumeAttached ? 'Yes' : 'No'}`,
-    ];
-    const subject = encodeURIComponent(
-      `Tutor Application — ${formData.name || 'New Applicant'}`
-    );
-    const body = encodeURIComponent(lines.join('\n'));
-    return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -124,19 +86,6 @@ export default function TutorApplicationForm() {
       setStatus('error');
       setStatusMessage(
         `Please confirm you will email your unofficial transcript to ${CONTACT_EMAIL}.`
-      );
-      return;
-    }
-
-    // If Formspree has not been configured yet, fall back to mailto: so the
-    // applicant's information still reaches justemacademy@gmail.com.
-    if (FORMSPREE_FORM_ID === 'YOUR_FORM_ID') {
-      window.location.href = buildMailtoFallback();
-      setStatus('success');
-      setStatusMessage(
-        "Your email client should now open with your application ready to send. If it didn't, please email your details to " +
-          CONTACT_EMAIL +
-          '.'
       );
       return;
     }
